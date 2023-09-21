@@ -1,17 +1,26 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 
 
 const MainLayout = () => {
+    const navigation = useNavigation();
+
     return (
         <div>
             <section>
                 <Navbar></Navbar>
             </section>
             <div className="min-h-screen">
-                <Outlet></Outlet>
+              
+            {
+                     
+                     navigation.state === "loading"
+                           ? "Loadinggggggggggggggggggg....."
+                           : <Outlet></Outlet>
+                      }
             </div>
+           
             <section>
                 <Footer></Footer>
             </section>

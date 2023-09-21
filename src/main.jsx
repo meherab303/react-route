@@ -12,11 +12,13 @@ import Profile from './Profile/Profile'
 import DashBoardLayout from './DashBoardLayout/DashBoardLayout'
 import Bio from './Bio/Bio'
 import Cart from './Cart/Cart'
+import Error from './Error/Error'
 
 const router=createBrowserRouter([
   {
     path:'/',
     element:<MainLayout></MainLayout>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:'/',
